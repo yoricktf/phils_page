@@ -1,3 +1,9 @@
+
+
+/***************************************
+GENERAL
+****************************************/
+
 * {
 	box-sizing: border-box;
 	font-family: 'Roboto', sans-serif;
@@ -8,11 +14,9 @@
 /*font-family: 'Roboto', sans-serif;*/
 
 
-
-
-
-
-
+/***************************************
+HEADER IMAGE
+****************************************/
 header {
 	width: 100vw;
 	height: 100vh;
@@ -22,7 +26,6 @@ header {
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-
 }
 
 header h1 {
@@ -36,10 +39,10 @@ header p {
 	font-family: 'Shrikhand', cursive;
 	font-size: 200%;
 }
-nav {
-	
-	
-}
+
+/***************************************
+NAV BAR
+****************************************/
 ul {
 	display: flex;
 	padding: 0;
@@ -64,12 +67,33 @@ nav ul li:hover {
 }
 
 
+/***************************************
+PRODUCTS / SAUSAGES
+****************************************/
+.products {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: flex-end;
+
+	flex-direction: column;
+
+}
+
+.sausage {
+	display: flex;
+
+}
+
+
+/****** ROUNDING PRODUCT IMAGES ******/
 .imgcrp {
 	width: 200px;
 	height: 200px;
 	position: relative;
 	overflow: hidden;
 	border-radius: 100%;
+	margin: 20px;
+	border: solid 13px black;
 }
 
 .imgcrp img {
@@ -78,6 +102,45 @@ nav ul li:hover {
     height: 100%;
     width: auto;
 }
+
+.txt {
+	margin-top: 20px;
+	width: 50%;
+}
+
+/***************************************
+
+****************************************/
+
+/***************************************
+CONTACT SECTION
+****************************************/
+.contact {
+	
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
