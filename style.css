@@ -1,4 +1,17 @@
-* {box-sizing: border-box;}
+* {
+	box-sizing: border-box;
+	font-family: 'Roboto', sans-serif;
+}
+
+
+/*font-family: 'Shrikhand', cursive;*/
+/*font-family: 'Roboto', sans-serif;*/
+
+
+
+
+
+
 
 header {
 	width: 100vw;
@@ -9,17 +22,50 @@ header {
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
+
 }
 
+header h1 {
+	font-family: 'Shrikhand', cursive;
+	line-height: .7;
+	font-size: 800%;
+	text-align: center;
+	padding: 0 10%;
+}
+header p {
+	font-family: 'Shrikhand', cursive;
+	font-size: 200%;
+}
+nav {
+	
+	
+}
 ul {
 	display: flex;
 	padding: 0;
-
-
+	margin-top: 0;
 }
+
 li {
 	list-style: none;
 	flex: 1;
 	text-align: center;
+	border: solid black 1.5px;
+	padding: 15px;
 
 }
+
+nav ul li:hover {
+	background-color: red;
+}
+
+.wrapper {
+	margin: 0 5%;
+}
+
+.sausage img {
+	border-radius: 20%;
+}
+
+
+
