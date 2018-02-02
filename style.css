@@ -116,7 +116,20 @@ PRODUCTS / SAUSAGES
 CONTACT SECTION
 ****************************************/
 .contact {
-	
+	display: flex;
+
+}
+
+.map {
+	display: flex;
+	flex: 3;
+	border: solid red 3px;
+	margin: 20px;
+}
+
+.shops {
+	flex: 2;
+	margin: 15px 25px;
 }
 
 
