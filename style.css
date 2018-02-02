@@ -115,9 +115,8 @@ PRODUCTS / SAUSAGES
 /***************************************
 CONTACT SECTION
 ****************************************/
-.contact {
+.location {
 	display: flex;
-
 }
 
 .map {
@@ -133,10 +132,22 @@ CONTACT SECTION
 }
 
 
+/***************************************
+FOOTER
+****************************************/
+footer {
+	display: flex;
+	justify-content: space-around;
+	border-top: solid black 3px;
+}
 
+.contact {
+	display: flex;
+}
 
-
-
+.contact p {
+	margin: 16px 10px;
+}
 
 
 
