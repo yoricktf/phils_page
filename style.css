@@ -20,12 +20,20 @@ HEADER IMAGE
 header {
 	width: 100vw;
 	height: 100vh;
-	background-color: red;
+	/*background-color: red;*/
 
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
+
+
+	/***** PARALAX EFFECT *****/
+	background-image: url('assets/shop.jpg');
+	background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 header h1 {
@@ -139,6 +147,7 @@ footer {
 	display: flex;
 	justify-content: space-around;
 	border-top: solid black 3px;
+
 }
 
 .contact {
