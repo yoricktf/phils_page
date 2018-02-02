@@ -63,8 +63,20 @@ nav ul li:hover {
 	margin: 0 5%;
 }
 
-.sausage img {
+
+.imgcrp {
+	width: 200px;
+	height: 200px;
+	position: relative;
+	overflow: hidden;
 	border-radius: 100%;
+}
+
+.imgcrp img {
+	display: inline;
+    margin: 0 auto;
+    height: 100%;
+    width: auto;
 }
 
 
