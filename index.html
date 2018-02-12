@@ -9,6 +9,8 @@
 	<link rel="stylesheet" href="normalize.css">
 	<link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700|Shrikhand" rel="stylesheet">
 	<link rel="stylesheet" href="style.css">
+	<!-- <script src="maps.js"></script>  -->
+	
 </head>
 <body>
 <!--======================== HEADER ========================-->
@@ -19,17 +21,27 @@
 		</div>
 	</header>
 <!--======================== NAVBAR ========================-->
-	<nav>
+	<nav id="navbar">
 		<ul>
-			<li id="about"><a href="">About us</a></li>
-			<li id="products"><a href="">Products</a></li>
-			<li id="Locations"><a href="">Locations</a></li>
+			<li class="btn" ><a href="#about">ABOUT US</a></li>
+			<li class="btn" ><a href="#products">PRODUCTS</a></li>
+			<li class="btn" ><a href="#location">LOCATIONS</a></li>
 		</ul>
 	</nav>
 <!--======================== WRAPPER ========================-->
 	<div class="wrapper">
+<!--======================== ABOUT ========================-->
+		<section id="about">
+			<img id="the_cook" src="assets/phil_katie.jpg" alt="">
+			<div class="abttxt">
+				<h1 class="title">WELCOME</h1>
+				<p>Donec interdum lorem dui, sed feugiat leo ultrices in. Vivamus risus ligula, bibendum in ornare ac, tempor non sapien. In aliquam laoreet velit vitae accumsan. Praesent lacinia, erat vitae lobortis blandit, nisi nibh porta ex, id pharetra orci tellus et urna. Morbi justo mauris, convallis non ultricies congue, lacinia vitae arcu. Nullam semper egestas ligula, nec malesuada lacus mattis sit amet. In vel scelerisque felis, ut malesuada dui. Mauris vel dui ante. Suspendisse maximus, lorem in tristique condimentum, tellus dui pretium augue, vel sagittis risus mauris id est. Nulla lacinia venenatis sollicitudin. Proin ac faucibus est. Nulla vulputate, eros sit amet consectetur euismod, diam libero dignissim sapien, in efficitur lectus diam consequat ipsum.
+				</p>
+			</div>
+		</section>
 <!--======================== PRODUCTS ========================-->
-		<section class="products">
+		<section id="products">
+			<h1>OUR PRODUCTS</h1>
 			<article class="sausage">
 				<div class="imgcrp">
 					<img src="assets/sau1.jpg" alt="">
@@ -65,23 +77,20 @@
 			</article>
 		</section>
 <!--======================== MAP / SHOPS ========================-->
-		<section class="location">
+		<section id="location">
+			<h1 class="title">FIND US HERE</h1>
 			<div id="map"></div>
 			<div class="shops">
+				<h1 class="title">OUR PARTNERS</h1>
 				<article class="address">
-					<img src="assets/bio-markt.png" alt="">
+					<img class="logo" src="assets/bio-markt.png" alt="">
 					<h3>Shop Name</h3>
-					<p>123 fake street Auckland, New Zealand</p>
+					<p>123 fake street<br>Fake area<br> Auckland 1234 <br>New Zealand</p>
 				</article>
 				<article class="address">
-					<img src="assets/veganz.png" alt="">
+					<img class="logo" src="assets/veganz.png" alt="">
 					<h3>Shop Name</h3>
-					<p>123 fake street Auckland, New Zealand</p>
-				</article>
-				<article class="address">
-					<img src="" alt="">
-					<h3>Shop Name</h3>
-					<p>123 fake street Auckland, New Zealand</p>
+					<p>123 fake street<br>Fake area<br> Auckland 1234 <br>New Zealand</p>
 				</article>
 			</div>
 		</section>
@@ -89,24 +98,359 @@
 <!--======================== FOOTER / CONTACT ========================-->
 	<footer>
 		<div class="contact">
-			<p>Email: fakeone@gmail.com</p>
-			<p>Phone: 123456789</p>
-			<p>twitter handle</p>
+			<p class="contacts">Email: fakeone@gmail.com</p>
+			<p class="contacts">Phone: 123456789</p>
+			<p class="contacts">twitter handle</p>
 		</div>
 		<p class="legalese">site design and logo blah blah blah</p>
 	</footer>
-
+<!--====================== JAVASCRIPT / NAV ======================-->
 	<script>
-function myMap() {
-  var mapCanvas = document.getElementById("map");
-  var mapOptions = { center: new google.maps.LatLng(-36.858299, 174.761066), zoom: 5 };
-  var map = new google.maps.Map(mapCanvas, mapOptions);
-  var marker = new google.maps.Marker({position:myCenter});
-  marker.setMap(map);
+window.onscroll = function() {myFunction()};
+
+var navbar = document.getElementById("navbar");
+var sticky = navbar.offsetTop;
+
+function myFunction() {
+  if (window.pageYOffset >= sticky) {
+    navbar.classList.add("sticky")
+  } else {
+    navbar.classList.remove("sticky");
+  }
 }
 </script>
 
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCr9DPw9sQbp95s7nrvqultFeoXTyoygOg&callback=myMap"></script>
+<!--====================== JAVASCRIPT / MAP ======================-->
+	<script>
+	function initMap() {
+// ======================== SHOP LOCATIONS
+		  var auckland = {lat: -36.848460, lng:174.763332};
+		  var phils = {lat: -36.916270,  lng:174.636482};
+		  var map = new google.maps.Map(document.getElementById('map'), {
+		    zoom: 11,
+		    center: auckland,
+		    styles: [
+  {
+    "elementType": "geometry",
+    "stylers": [
+      {
+        "color": "#ebe3cd"
+      }
+    ]
+  },
+  {
+    "elementType": "labels.text.fill",
+    "stylers": [
+      {
+        "color": "#523735"
+      }
+    ]
+  },
+  {
+    "elementType": "labels.text.stroke",
+    "stylers": [
+      {
+        "color": "#f5f1e6"
+      }
+    ]
+  },
+  {
+    "featureType": "administrative",
+    "elementType": "geometry.stroke",
+    "stylers": [
+      {
+        "color": "#c9b2a6"
+      }
+    ]
+  },
+  {
+    "featureType": "administrative.land_parcel",
+    "elementType": "geometry.stroke",
+    "stylers": [
+      {
+        "color": "#dcd2be"
+      }
+    ]
+  },
+  {
+    "featureType": "administrative.land_parcel",
+    "elementType": "labels",
+    "stylers": [
+      {
+        "visibility": "off"
+      }
+    ]
+  },
+  {
+    "featureType": "administrative.land_parcel",
+    "elementType": "labels.text.fill",
+    "stylers": [
+      {
+        "color": "#ae9e90"
+      }
+    ]
+  },
+  {
+    "featureType": "landscape.natural",
+    "elementType": "geometry",
+    "stylers": [
+      {
+        "color": "#dfd2ae"
+      }
+    ]
+  },
+  {
+    "featureType": "poi",
+    "elementType": "geometry",
+    "stylers": [
+      {
+        "color": "#dfd2ae"
+      }
+    ]
+  },
+  {
+    "featureType": "poi",
+    "elementType": "labels.text",
+    "stylers": [
+      {
+        "visibility": "off"
+      }
+    ]
+  },
+  {
+    "featureType": "poi",
+    "elementType": "labels.text.fill",
+    "stylers": [
+      {
+        "color": "#93817c"
+      }
+    ]
+  },
+  {
+    "featureType": "poi.attraction",
+    "stylers": [
+      {
+        "visibility": "off"
+      }
+    ]
+  },
+  {
+    "featureType": "poi.business",
+    "stylers": [
+      {
+        "visibility": "on"
+      }
+    ]
+  },
+  {
+    "featureType": "poi.government",
+    "stylers": [
+      {
+        "visibility": "off"
+      }
+    ]
+  },
+  {
+    "featureType": "poi.medical",
+    "stylers": [
+      {
+        "visibility": "off"
+      }
+    ]
+  },
+  {
+    "featureType": "poi.park",
+    "elementType": "geometry.fill",
+    "stylers": [
+      {
+        "color": "#a5b076"
+      }
+    ]
+  },
+  {
+    "featureType": "poi.park",
+    "elementType": "labels.text",
+    "stylers": [
+      {
+        "visibility": "off"
+      }
+    ]
+  },
+  {
+    "featureType": "poi.park",
+    "elementType": "labels.text.fill",
+    "stylers": [
+      {
+        "color": "#447530"
+      }
+    ]
+  },
+  {
+    "featureType": "poi.place_of_worship",
+    "stylers": [
+      {
+        "visibility": "off"
+      }
+    ]
+  },
+  {
+    "featureType": "poi.school",
+    "stylers": [
+      {
+        "visibility": "off"
+      }
+    ]
+  },
+  {
+    "featureType": "poi.sports_complex",
+    "stylers": [
+      {
+        "visibility": "off"
+      }
+    ]
+  },
+  {
+    "featureType": "road",
+    "elementType": "geometry",
+    "stylers": [
+      {
+        "color": "#f5f1e6"
+      }
+    ]
+  },
+  {
+    "featureType": "road.arterial",
+    "elementType": "geometry",
+    "stylers": [
+      {
+        "color": "#fdfcf8"
+      }
+    ]
+  },
+  {
+    "featureType": "road.highway",
+    "elementType": "geometry",
+    "stylers": [
+      {
+        "color": "#f8c967"
+      }
+    ]
+  },
+  {
+    "featureType": "road.highway",
+    "elementType": "geometry.stroke",
+    "stylers": [
+      {
+        "color": "#e9bc62"
+      }
+    ]
+  },
+  {
+    "featureType": "road.highway.controlled_access",
+    "elementType": "geometry",
+    "stylers": [
+      {
+        "color": "#e98d58"
+      }
+    ]
+  },
+  {
+    "featureType": "road.highway.controlled_access",
+    "elementType": "geometry.stroke",
+    "stylers": [
+      {
+        "color": "#db8555"
+      }
+    ]
+  },
+  {
+    "featureType": "road.local",
+    "elementType": "labels",
+    "stylers": [
+      {
+        "visibility": "off"
+      }
+    ]
+  },
+  {
+    "featureType": "road.local",
+    "elementType": "labels.text.fill",
+    "stylers": [
+      {
+        "color": "#806b63"
+      }
+    ]
+  },
+  {
+    "featureType": "transit.line",
+    "elementType": "geometry",
+    "stylers": [
+      {
+        "color": "#dfd2ae"
+      }
+    ]
+  },
+  {
+    "featureType": "transit.line",
+    "elementType": "labels.text.fill",
+    "stylers": [
+      {
+        "color": "#8f7d77"
+      }
+    ]
+  },
+  {
+    "featureType": "transit.line",
+    "elementType": "labels.text.stroke",
+    "stylers": [
+      {
+        "color": "#ebe3cd"
+      }
+    ]
+  },
+  {
+    "featureType": "transit.station",
+    "elementType": "geometry",
+    "stylers": [
+      {
+        "color": "#dfd2ae"
+      }
+    ]
+  },
+  {
+    "featureType": "water",
+    "elementType": "geometry.fill",
+    "stylers": [
+      {
+        "color": "#92d3d3"
+      }
+    ]
+  },
+  {
+    "featureType": "water",
+    "elementType": "labels.text.fill",
+    "stylers": [
+      {
+        "color": "#92998d"
+      }
+    ]
+  }
+]
+		  });
+// ======================== MARKERS ON MAP
+var marker = new google.maps.Marker({
+  position: auckland,
+  map: map,
+  title: "test"
+});
+var marker = new google.maps.Marker({
+  position: phils,
+  map: map
+});
+marker.setMap(map);
+	}
+	</script>
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCr9DPw9sQbp95s7nrvqultFeoXTyoygOg&callback=initMap"></script>
 </body>
 </html>
 
