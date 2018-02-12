@@ -17,6 +17,10 @@ GENERAL
   width: 100%
 }
 
+.sticky + .content {
+  padding-top: 50px;
+}
+
 
 /*font-family: 'Shrikhand', cursive;*/
 /*font-family: 'Roboto', sans-serif;*/
@@ -67,11 +71,14 @@ NAV BAR
 ****************************************/
 nav {
 	background-color: #fff;
+	z-index: 2;
+
 }
 ul {
 	display: flex;
 	padding: 0;
 	margin-top: 0;
+	margin-bottom: 0;
 }
 .btn {
 	list-style: none;
@@ -111,7 +118,7 @@ ABOUT
 	text-align: justify;
 }
 #the_cook {
-	/*margin-top: 15px;*/
+	margin-top: 16px;
 	width: 100%;
 	box-shadow: 0px 2px 10px;
 
